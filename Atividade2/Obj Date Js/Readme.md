@@ -1,5 +1,5 @@
-## Trabalhando com o Objeto Date JavaScript.
-# Esse Branch tras melhorias/correções para o primeiro codigo do exercicio.
+# Trabalhando com o Objeto Date JavaScript.
+## Esse Branch tras melhorias/correções para o primeiro codigo do exercicio.
 ##
 A partir de mais estudo percebi que o objeto possui um meio de formatação muito mas muito mais pratico do que o desenvolvido por mim.....
 
