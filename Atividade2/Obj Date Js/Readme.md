@@ -1,7 +1,7 @@
 # Trabalhando com o Objeto Date JavaScript.
 ## Esse Branch tras melhorias/correções para o primeiro codigo do exercicio.
 
-A partir de mais estudo percebi que o objeto possui um meio de formatação muito mas muito mais pratico do que o desenvolvido por mim.....
+A partir de mais estudos percebi que o objeto possui um meio de formatação muito mas muito mais pratico do que o desenvolvido por mim.....
 ##
 const h1 = document.querySelector('.container h1');
 const data = new Date();
