@@ -1,4 +1,4 @@
-const h1 = document.querySelector('.container h1');
+/* const h1 = document.querySelector('.container h1');
 
 
 
@@ -107,4 +107,12 @@ function criaData(data){
 }
 h1.innerHTML=criaData(data);
 
+ */
 
+//Solução Apos estudo da documentação do objeto.
+
+const h1 = document.querySelector('.container h1');
+const data = new Date();
+
+// usando a propiedade do objeto, formatando a data e hora.
+h1.innerHTML = data.toLocaleString('pt-BR',{dateStyle:'full',timeStyle:'short' });
