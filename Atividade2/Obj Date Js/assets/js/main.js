@@ -1,118 +1,97 @@
-/* const h1 = document.querySelector('.container h1');
+function zeroAEsquerda(num) {
 
+    return num >= 10 ? num : `0${num}`;
 
-
-
-const data = new Date();
-console.log(data);
-// Retorna as horas e minutos ja em string.
-function horaMinutoString(data) {
-    const horas = data.getHours() >= 10 ? data.getHours() : `0${data.getHours()}`;
-    const minutos = data.getMinutes() >= 10 ? data.getMinutes() : `0${data.getMinutes()}`;
-    let stringhoras = `${horas}:${minutos}`;
-    return stringhoras;
 }
 
-// Retorna o ano
-function anoString(data) {
-    const anoString = data.getFullYear();
-    return anoString;
-}
-// Converte o mes de Number para a respctiva string//
-function mesAnoString(data) {
-    const mes = data.getMonth();
-    let mesText;
+function strMes(mes) {
     switch (mes) {
         case 0:
-            mesText = 'Janeiro';
+
+            return 'Janeiro';
+
             break;
         case 1:
-            mesText = 'Fevereiro';
+            return 'Fevereiro';
             break;
         case 2:
-            mesText = 'Março';
+            return 'Março';
             break;
         case 3:
-            mesText = 'Abriu';
+            return 'Abril';
             break;
         case 4:
-            mesText = 'Maio';
+            return 'Maio';
             break;
         case 5:
-            mesText = 'Junho';
+            return 'Junho';
             break;
         case 6:
-            mesText = 'Julho';
+            return 'Julho';
             break;
         case 7:
-            mesText = 'Agosto';
+            return 'Agosto';
             break;
         case 8:
-            mesText = 'Setembro';
+            return 'Setembro';
             break;
         case 9:
-            mesText = 'Outubro';
+            return 'Outubro';
             break;
         case 10:
-            mesText = 'Novembro';
+            return 'Novembro';
             break;
         case 11:
-            mesText = 'Dezembro';
+            return 'Dezembro';
             break;
     }
-    return mesText;
 }
-
-//Retorna o dia do mes.
-function diaMesString(data) {
-    const diaMes = data.getDate();
-    return diaMes
-}
-//Acha o dia da semana e transforma em string.
-function diaSString(data) {
-    const diaSemana = data.getDay()
-    let diaSemanaString;
-    switch (diaSemana) {
-        case 0:
-            diaSemanaString = "Segunda-Feira";
-            return diaSemanaString;
-        case 1:
-            diaSemanaString = "Terça-Feira";
-            return diaSemanaString;
-        case 2:
-            diaSemanaString = "Quarta-Feira";
-            return diaSemanaString;
-        case 3:
-            diaSemanaString = "Quinta-Feira";
-            return diaSemanaString;
-        case 4:
-            diaSemanaString = "Sexta-Feira";
-            return diaSemanaString;
-        case 5:
-            diaSemanaString = "Sabado";
-            return diaSemanaString;
-        case 6:
-            diaSemanaString = "Domingo";
-            return diaSemanaString;
-    }
-}
-function criaData(data){
-    const diaSemana = diaSString(data);
-    const diaMes = diaMesString(data);
-    const mes = mesAnoString(data);
-    const ano = anoString(data);
-    const horas =  horaMinutoString(data);
-
-    return `${diaSemana}, ${diaMes} de ${mes} de ${ano} ${horas}`;
-}
-h1.innerHTML=criaData(data);
-
- */
-
-//Solução Apos estudo da documentação do objeto.
-
-const h1 = document.querySelector('.container h1');
 const data = new Date();
 
-// usando a propiedade do objeto, formatando a data e hora.
-h1.innerHTML = data.toLocaleString('pt-BR',{dateStyle:'full',timeStyle:'short' });
+const dia = zeroAEsquerda(data.getDate());
+const mes = data.getMonth();
+const ano = zeroAEsquerda(data.getFullYear());
+const hora = zeroAEsquerda(data.getHours());
+const min = zeroAEsquerda(data.getMinutes());
+const seg = zeroAEsquerda(data.getSeconds());
+
+function diaDaSemana(data) {
+    let intDay = data.getDay();
+    switch (intDay) {
+        case 0:
+
+            return 'Domingo';
+
+            break;
+        case 1:
+            return 'Segunda-Feira';
+            break;
+        case 2:
+            return 'Terça-Feira';
+            break;
+        case 3:
+            return 'Quarta-Feira';
+            break;
+        case 4:
+            return 'Quinta-Feira';
+            break;
+        case 5:
+            return 'Sexta-Feira';
+            break;
+        case 6:
+            return 'Sabado';
+            break;
+    }
+}
+
+let dSemana = diaDaSemana(data);
+let strmes = strMes(mes);
+
+const h1 = document.querySelector('.container h1');
+
+const horaOut = `${dSemana},${dia} de ${strmes} de ${ano} ${hora}:${min} `
+
+h1.innerHTML = horaOut;
+
+
+
